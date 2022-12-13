@@ -1,2 +1,13 @@
-package ru.philimonov.springcourse;public class TestSpring {
+package ru.philimonov.springcourse;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestSpring {
+    public static void main(String[] args) {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        TestBean testBean = context.getBean(TestBean.class);
+        System.out.println(testBean.getName());
+        context.close();
+    }
 }
